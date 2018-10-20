@@ -1,0 +1,5 @@
+spring:
+  profiles: dev
+grpc:
+  server:
+    port: 9898

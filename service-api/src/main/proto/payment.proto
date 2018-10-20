@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.payment";
+option java_outer_classname = "PaymentProto";
+option objc_class_prefix = "PAY";
+
+package payment;
+
+service PaymentService{
+    rpc payment(PaymentRequest) returns (PaymentReply) {
+    }
+}
+
+// 请求参数
+message PaymentRequest{
+    string orderNo = 1;
+    string orderMoney = 2;
+    string paymentType = 3;
+    string createTime = 4;
+}
+
+message PaymentReply{
+    string orderNo = 1;
+    string orderMoney = 2;
+    string paymentType = 3;
+}
